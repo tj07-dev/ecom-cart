@@ -1,0 +1,35 @@
+@import "./variables.scss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  color: $dark;
+  font-family: $Poppins;
+}
+
+#root {
+  height: 100%;
+}
+.product-list {
+  margin: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+.cart-heading {
+  margin: 30px;
+  color: rgb(3, 3, 3);
+}
+
+@media screen and (min-width: 600px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+  }
+}

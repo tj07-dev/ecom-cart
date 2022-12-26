@@ -1,0 +1,109 @@
+@import "./../styles/variables.scss";
+
+.card {
+  box-shadow: 0 0 10px 5px gray;
+  border-radius: $radius;
+  min-width: 28rem;
+  display: flex;
+  margin: 2px;
+
+  &__img {
+    width: 14rem;
+    height: 18rem;
+    object-fit: cover;
+  }
+  &__body {
+    margin: 1rem;
+    flex-grow: 1;
+
+    &__title {
+      line-height: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    &__description {
+      line-height: 1.2rem;
+    }
+    &__price {
+      font-style: 1.4rem;
+      margin-top: 0.6rem;
+      &::before {
+        content: "$";
+        font-style: 1rem;
+        position: relative;
+        top: -0.3rem;
+        padding-right: 0.1rem;
+      }
+    }
+    &__stock {
+      color: red;
+      margin-top: 2rem;
+    }
+    &__a2cbtn {
+      border: none;
+      border-top: 1px solid rgba(100, 98, 98, 0.494);
+      background: transparent;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $primary-hover;
+      width: 100%;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+    &__quantity {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      button {
+        border: 1px solid rgb(208, 208, 208);
+        background: rgba(216, 18, 18, 0.758);
+        font-family: inherit;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+        color: inherit;
+        cursor: pointer;
+        padding: 2px 8px;
+      }
+
+      &__quatityBTN {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin: 8px;
+      }
+      &__quatityBTN button {
+        border: 1px solid rgb(208, 208, 208);
+        background: rgba(203, 202, 202, 0);
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: bold;
+        color: inherit;
+        cursor: pointer;
+        padding: 2px 8px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+  }
+  .card {
+    flex-direction: column;
+    text-align: center;
+    min-width: 14rem;
+
+    &__img {
+      width: 100%;
+      height: 12rem;
+    }
+  }
+}
