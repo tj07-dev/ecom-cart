@@ -25,11 +25,12 @@
     &__price {
       font-style: 1.4rem;
       margin-top: 0.6rem;
-      &::before {
-        content: "$";
+      &::after {
+        content: "INR";
         font-style: 1rem;
         position: relative;
         top: -0.3rem;
+        font-size: 0.7rem;
         padding-right: 0.1rem;
       }
     }
@@ -74,8 +75,12 @@
       &__quatityBTN {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        gap: 0.7rem;
         margin: 8px;
+
+        p {
+          font-size: small;
+        }
       }
       &__quatityBTN button {
         border: 1px solid rgb(208, 208, 208);
@@ -83,6 +88,7 @@
         font-family: inherit;
         font-size: 1rem;
         font-weight: bold;
+
         color: inherit;
         cursor: pointer;
         padding: 2px 8px;

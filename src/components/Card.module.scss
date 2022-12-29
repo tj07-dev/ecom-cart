@@ -3,13 +3,15 @@
 .card {
   box-shadow: 0 0 10px 5px gray;
   border-radius: $radius;
-  min-width: 28rem;
+  // min-width: 28rem;
+  min-width: 22rem;
   display: flex;
   margin: 2px;
 
   &__img {
     width: 14rem;
     height: 18rem;
+    image-rendering: optimizeSpeed;
     object-fit: cover;
   }
   &__body {
@@ -22,15 +24,21 @@
     }
     &__description {
       line-height: 1.2rem;
+      text-align: justify;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      max-height: 7rem;
+      overflow: hidden;
     }
     &__price {
       font-style: 1.4rem;
       margin-top: 0.6rem;
-      &::before {
-        content: "$";
+      &::after {
+        content: "INR";
         font-style: 1rem;
         position: relative;
         top: -0.3rem;
+        font-size: 0.7rem;
         padding-right: 0.1rem;
       }
     }
@@ -72,6 +80,13 @@
         cursor: pointer;
         padding: 2px 8px;
       }
+      button:disabled,
+      button[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+      }
 
       &__quatityBTN {
         display: flex;
@@ -103,7 +118,7 @@
 
     &__img {
       width: 100%;
-      height: 12rem;
+      height: 18rem;
     }
   }
 }

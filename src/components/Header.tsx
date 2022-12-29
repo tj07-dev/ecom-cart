@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const Header = () => {
-  const { openCart, cartQuantity } = useShoppingCart();
+  const { cartQuantity } = useShoppingCart();
   return (
     <header className={classes.header}>
       <div className={classes.header__content}>
@@ -18,7 +18,7 @@ const Header = () => {
           </ul>
           {cartQuantity > 0 && (
             <Link className={classes.header__content__nav__Link} to="/viweCart">
-              <button onClick={openCart}>
+              <button className={classes.header__content__nav__Link__header} >
                 Viwe Cart
                 <div className={classes.header__content__nav__cartQuantity}>
                   {cartQuantity}

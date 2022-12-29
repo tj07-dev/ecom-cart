@@ -1,34 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Shoes",
+    "name": "MSI GF63 ",
     "stock": 10,
-    "img": "https://images.pexels.com/photos/14840714/pexels-photo-14840714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "img": "https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "price": 399.99,
-    "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    "description": "Display: 15.6 Fhd (1920 1080), IPS-Level 60Hz 45 percent ntsc thin Bezel 1920 1080 16: 9Graphics: NVIDIA GeForce GTX1650 [Max-Q 4G GDDR5 Processor: Intel Core i5-9300h 2.4 - 4.1GHz Memory: 8GB (8G 1) DDR4 2666MHz 2 Sockets Max Memory 64GB Storage: 256GB NVMe SSD."
   },
   {
     "id": 2,
-    "name": "Bags",
-    "stock": 20,
-    "img": "https://images.pexels.com/photos/14840714/pexels-photo-14840714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": 299.99,
-    "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    "name": " Gaming Headset",
+    "stock": 0,
+    "img": "https://images.pexels.com/photos/205926/pexels-photo-205926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 799.99,
+    "description": "Flexible headphones with telescopic arms and detachable ear pads. The headphones fold inside the arm, making them perfect for easy storage and travelling and the ear pads are magnetic, allowing them to be conveniently attached and removed"
   },
   {
     "id": 3,
-    "name": "Shirts",
+    "name": "Gaming Mouse",
     "stock": 15,
-    "img": "https://images.pexels.com/photos/14840714/pexels-photo-14840714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": 149.99,
-    "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    "img": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 949.99,
+    "description": "HERO Gaming Sensor: Next-gen HERO mouse sensor delivers up to 10x the power efficiency over other gaming mice with exceptional accuracy and responsiveness thanks to 400 IPS precision and up to 12000 DPI sensitivity"
   },
   {
     "id": 4,
-    "name": "Shorts",
-    "stock": 0,
-    "img": "https://images.pexels.com/photos/14840714/pexels-photo-14840714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "price": 109.99,
-    "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
+    "name": "Amazon Fire TV",
+    "stock": 12,
+    "img": "https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 11109.99,
+    "description": "Bring movies and shows to life with support for vivid 4K Ultra HD, HDR 10, HLG, and Dolby Digital Plus.4K Ultra HD, HDR 10, and HLG deliver a clearer and more vibrant picture with brighter colors compared to 1080p Full HD."
+  },
+  {
+    "id": 5,
+    "name": " Office Chair",
+    "stock": 18,
+    "img": "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 9109.99,
+    "description": "Premium soft PU leather accented with hand-sewing diamond cross stitching,more comfortable and durable than normal leather, giving better cushioning and support like sleeping on mattress"
+  },
+  {
+    "id": 6,
+    "name": " Smart Watch",
+    "stock": 7,
+    "img": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 1099.99,
+    "description": "All-day Activity Tracking: This smart watch has 7 kinds of sports modes (Walking, Running, Cycling, Skipping, Badminton, Basketball, Football). The watch display shows your accurate steps, distance, calories, active minutes and you can see more detailed data on App."
   }
 ]

@@ -7,8 +7,9 @@ type ShoppingCartProps = {
 };
 
 const CartItem = ({ id, quantity }: ShoppingCartProps) => {
-  const { cartItems, removeFromCart } = useShoppingCart();
+  const { cartItems, removeFromCart, increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
   const item = products.find((i) => i.id === id);
+
   if (item == null) return null;
   return (
     <div className={classes.card}>
@@ -21,9 +22,17 @@ const CartItem = ({ id, quantity }: ShoppingCartProps) => {
           )}
         </h2>
         <h3 className={classes.card__body__price}>{item.price}</h3>
+        <p>{item.description}</p>
+        <div className={classes.card__body__quantity__quatityBTN}>
+          <button onClick={() => decreaseCartQuantity(id)} >-</button>
+          <p>
+            <span>{quantity}</span> in cart.
+          </p>
+          {quantity < item.stock ? <button onClick={() => increaseCartQuantity(id)}>+</button> : <button disabled>+</button>}
+        </div>
         <button onClick={() => removeFromCart(id)}>Remove</button>
       </div>
-      <div><h2>{item.price * quantity}</h2></div>
+      <div>Total<h2>{item.price * quantity}</h2></div>
     </div>
   );
 };

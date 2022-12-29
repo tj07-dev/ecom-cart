@@ -1,0 +1,19 @@
+@import "./../styles/variables.scss";
+
+.a2cbtn {
+  border: none;
+  border-top: 1px solid rgba(100, 98, 98, 0.494);
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $primary-hover;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-hover;
+  }
+}
