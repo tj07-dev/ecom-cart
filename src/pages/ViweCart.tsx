@@ -16,7 +16,7 @@ export function ViweCart() {
         'Content-Type': 'application/json'
       }
     });
-    console.log(JSON.stringify(cartItems))
+    // console.log(JSON.stringify(cartItems))
   }
   return (
     <>
