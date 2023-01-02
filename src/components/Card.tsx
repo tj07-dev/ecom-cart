@@ -1,6 +1,7 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import classes from "./Card.module.scss";
-import productlist from '../data/product.json'
+import productlist from "../data/product.json";
+import Button from "./Button";
 
 type ProductItemProps = {
   id: number;
@@ -10,58 +11,48 @@ type ProductItemProps = {
   description: string;
   stock: number;
 };
-const Card = ({
-  id,
-  img,
-  name,
-  price,
-  description,
-  stock,
-}: ProductItemProps) => {
-  const {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
-  } = useShoppingCart();
-  const quantity = getItemQuantity(id)
+const Card = ({ id, img, name, price, description, stock }: ProductItemProps) => {
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } =
+    useShoppingCart();
+  const quantity = getItemQuantity(id);
 
-  const handeleAddtoCart = async (id: number) => {
-    increaseCartQuantity(id)
-    console.warn(quantity)
-    let data = await fetch('http://localhost:8000/cart', {
-      method: 'post',
+  const handleAddtoCart = async (id: number) => {
+    increaseCartQuantity(id);
+    // console.warn(quantity);
+    const data = await fetch("http://localhost:8000/cart", {
+      method: "post",
       body: JSON.stringify({ id: id, stock: productlist[id - 1].stock, quantity }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
-    console.log(data)
-  }
-  const handeleOutOfStock = async (id: number) => {
-    console.warn(quantity)
-    let data = await fetch('http://localhost:8000/cart', {
-      method: 'post',
+    // console.log(data);
+  };
+  const handleOutOfStock = async (id: number) => {
+    // console.warn(quantity);
+    const data = await fetch("http://localhost:8000/cart", {
+      method: "post",
       body: JSON.stringify({ id: id, stock: productlist[id - 1].stock, quantity }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
-    console.log(data)
-  }
+    console.log(data);
+  };
 
-  const handeleRemovetoCart = async (id: number) => {
-    decreaseCartQuantity(id)
-    console.warn(quantity)
-    let data = await fetch('http://localhost:8000/cartRemove', {
-      method: 'post',
+  const handleRemoveFromCart = async (id: number) => {
+    decreaseCartQuantity(id);
+    // console.warn(quantity);
+    const data = await fetch("http://localhost:8000/cartRemove", {
+      method: "post",
       body: JSON.stringify({ id: id, stock: productlist[id - 1].stock, quantity }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+        'char-set': "utf-8"
+      },
     });
-    console.log(data)
-  }
+    // console.log(data);
+  };
 
   return (
     <div className={classes.card}>
@@ -70,33 +61,42 @@ const Card = ({
         <h2 className={classes.card__body__title}>{name}</h2>
         <p className={classes.card__body__description}>{description}</p>
         <h3 className={classes.card__body__price}>{price}</h3>
-        {quantity === 0 ? (<>
-          {stock == 0 ? <button
-            className={classes.card__body__a2cbtn}
-            onClick={() => handeleOutOfStock(id)}
-          >
-            Add to cart
-          </button> : <button
-            className={classes.card__body__a2cbtn}
-            onClick={() => handeleAddtoCart(id)}
-          >
-            Add to cart
-          </button>}
-        </>
-          // <Button className=".a2cbtn" onClick={handleRemovetoCart} />
+        {quantity === 0 ? (
+          <>
+            {stock == 0 ? (
+              // <button className={classes.card__body__a2cbtn} onClick={() => handleOutOfStock(id)}>
+              //   Add to cart
+              // </button>
+              <Button className="a2cbtn" children="Add to cart" myFunction={() => handleOutOfStock(id)} />
+            ) : (
+              // <button className={classes.card__body__a2cbtn} onClick={() => handleAddtoCart(id)}>
+              //   Add to cart
+              // </button>
+              <Button className="a2cbtn" children="Add to cart" myFunction={() => handleAddtoCart(id)} />
+            )}
+          </>
         ) : (
+          // <Button className=".a2cbtn" onClick={handleRemovetoCart} />
           <div className={classes.card__body__quantity}>
             <div className={classes.card__body__quantity__quatityBTN}>
-              <button onClick={() => handeleRemovetoCart(id)} >-</button>
+              <Button children="-" myFunction={() => handleRemoveFromCart(id)} />
+              {/* <button onClick={() => handleRemoveFromCart(id)}>-</button> */}
               <p>
                 <span>{quantity}</span> in cart.
-              </p>{quantity < stock ? <button onClick={() => handeleAddtoCart(id)}>+</button> : <button disabled>+</button>}
+              </p>
+              {quantity < stock ? (
+                // <button onClick={() => handleAddtoCart(id)}>+</button>
+                <Button children="+" myFunction={() => handleAddtoCart(id)} />
+              ) : (
+                <button disabled>+</button>
+              )}
             </div>
-            <button onClick={() => removeFromCart(id)}>Remove</button>
+            <Button children="Remove" myFunction={() => removeFromCart(id)} />
+            {/* <button onClick={() => removeFromCart(id)}>Remove</button> */}
           </div>
         )}
       </div>
-    </div >
+    </div>
   );
 };
 

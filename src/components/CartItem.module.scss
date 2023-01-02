@@ -2,9 +2,12 @@
 
 .card {
   border-radius: $radius;
+  box-shadow: 0 0 10px 5px gray;
   min-width: 28rem;
   display: flex;
   margin: 2rem;
+  padding: 1rem;
+  background-color: $bg;
 
   &__img {
     width: 7rem;
@@ -76,7 +79,7 @@
         display: flex;
         flex-direction: row;
         gap: 0.7rem;
-        margin: 8px;
+        margin: 8px 0;
 
         p {
           font-size: small;
@@ -93,6 +96,21 @@
         cursor: pointer;
         padding: 2px 8px;
       }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 16rem));
+  }
+  .card {
+    flex-direction: column;
+    text-align: center;
+    min-width: 22rem;
+
+    &__img {
+      width: 100%;
+      height: 18rem;
     }
   }
 }

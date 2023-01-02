@@ -1,5 +1,6 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import products from "../data/product.json";
+import Button from "./Button";
 import classes from "./CartItem.module.scss";
 type ShoppingCartProps = {
   id: number;
@@ -24,15 +25,17 @@ const CartItem = ({ id, quantity }: ShoppingCartProps) => {
         <h3 className={classes.card__body__price}>{item.price}</h3>
         <p>{item.description}</p>
         <div className={classes.card__body__quantity__quatityBTN}>
-          <button onClick={() => decreaseCartQuantity(id)} >-</button>
+
+          <Button children="-" myFunction={() => decreaseCartQuantity(id)} />
           <p>
             <span>{quantity}</span> in cart.
           </p>
-          {quantity < item.stock ? <button onClick={() => increaseCartQuantity(id)}>+</button> : <button disabled>+</button>}
+          {quantity < item.stock ? <Button children="+" myFunction={() => increaseCartQuantity(id)} /> : <button disabled>+</button>}
         </div>
-        <button onClick={() => removeFromCart(id)}>Remove</button>
+        <Button children="Remove" myFunction={() => removeFromCart(id)} />
+        {/* <button onClick={() => removeFromCart(id)}>Remove</button> */}
+        <div><h3>Total : {item.price * quantity}</h3></div>
       </div>
-      <div>Total<h2>{item.price * quantity}</h2></div>
     </div>
   );
 };

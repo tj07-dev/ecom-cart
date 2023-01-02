@@ -34,7 +34,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps): J
 
   //Function to increase Cart Quantity
   function increaseCartQuantity(id: number) {
-    console.log(cartItems)
+    // console.log(cartItems)
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return (

@@ -3,6 +3,8 @@
 .card {
   box-shadow: 0 0 10px 5px gray;
   border-radius: $radius;
+  background-color: $bg;
+  overflow: hidden;
   // min-width: 28rem;
   min-width: 22rem;
   display: flex;
@@ -10,9 +12,12 @@
 
   &__img {
     width: 14rem;
-    height: 18rem;
-    image-rendering: optimizeSpeed;
+    // height: 18rem;
+
+    aspect-ratio: 3/2;
     object-fit: cover;
+    // object-fit: contain;
+    // mix-blend-mode: color-burn;
   }
   &__body {
     margin: 1rem;
@@ -94,6 +99,11 @@
         gap: 2rem;
         margin: 8px;
       }
+      &__quatityBTN p {
+        display: flex;
+        flex-direction: unset;
+      }
+
       &__quatityBTN button {
         border: 1px solid rgb(208, 208, 208);
         background: rgba(203, 202, 202, 0);
@@ -109,12 +119,12 @@
 }
 @media screen and (min-width: 600px) {
   .product-list {
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 16rem));
   }
   .card {
     flex-direction: column;
     text-align: center;
-    min-width: 14rem;
+    min-width: 22rem;
 
     &__img {
       width: 100%;
