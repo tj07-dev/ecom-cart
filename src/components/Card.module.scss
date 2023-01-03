@@ -5,15 +5,14 @@
   border-radius: $radius;
   background-color: $bg;
   overflow: hidden;
-  // min-width: 28rem;
-  min-width: 22rem;
+  // width: 22rem;
+  max-width: 28rem;
   display: flex;
   margin: 2px;
 
   &__img {
     width: 14rem;
     // height: 18rem;
-
     aspect-ratio: 3/2;
     object-fit: cover;
     // object-fit: contain;

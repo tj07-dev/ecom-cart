@@ -1,0 +1,78 @@
+@import "./../styles/variables.scss";
+
+.container {
+  position: fixed;
+  top: 10vh;
+  left: 1vh;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: $dark;
+  box-shadow: 0 0 5px gray;
+  background: $bg;
+  height: 70px;
+  margin: 10px;
+  border-radius: 15px;
+  padding-inline: 5px;
+  animation: notify 0.2s ease-out;
+  z-index: 500;
+  .iconContainer {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      color: $dark;
+    }
+  }
+  .title {
+    font-style: 14px;
+    color: black;
+  }
+  .close {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-style: 18px;
+  }
+}
+
+@keyframes notify {
+  0% {
+    top: -90vh;
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    top: 10vh;
+    opacity: 1;
+    scale: 1;
+  }
+}
+.success {
+  @extend .container;
+  box-shadow: 0 0 10px rgb(66, 170, 66);
+}
+
+.fail {
+  @extend .container;
+
+  box-shadow: 0 0 10px rgb(170, 66, 66);
+}
+
+.info {
+  @extend .container;
+
+  box-shadow: 0 0 10px rgb(16, 167, 255);
+}
+.warn {
+  @extend .container;
+
+  box-shadow: 0 0 10px rgb(194, 247, 4);
+}

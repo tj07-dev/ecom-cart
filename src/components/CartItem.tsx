@@ -2,15 +2,21 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import products from "../data/product.json";
 import Button from "./Button";
 import classes from "./CartItem.module.scss";
+
 type ShoppingCartProps = {
+  /**
+* Special Idetifiers of the product added in the cart.
+*/
   id: number;
+  /**
+* Number of product added in cart.
+*/
   quantity: number;
 };
 
 const CartItem = ({ id, quantity }: ShoppingCartProps) => {
   const { cartItems, removeFromCart, increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
   const item = products.find((i) => i.id === id);
-
   if (item == null) return null;
   return (
     <div className={classes.card}>
@@ -26,14 +32,13 @@ const CartItem = ({ id, quantity }: ShoppingCartProps) => {
         <p>{item.description}</p>
         <div className={classes.card__body__quantity__quatityBTN}>
 
-          <Button children="-" myFunction={() => decreaseCartQuantity(id)} />
+          <Button className="decreaseQ" children="-" myFunction={() => decreaseCartQuantity(id)} />
           <p>
             <span>{quantity}</span> in cart.
           </p>
-          {quantity < item.stock ? <Button children="+" myFunction={() => increaseCartQuantity(id)} /> : <button disabled>+</button>}
+          {quantity < item.stock ? <Button className="increaseQ" children="+" myFunction={() => increaseCartQuantity(id)} /> : <button disabled>+</button>}
         </div>
-        <Button children="Remove" myFunction={() => removeFromCart(id)} />
-        {/* <button onClick={() => removeFromCart(id)}>Remove</button> */}
+        <Button className="remove" children="Remove" myFunction={() => removeFromCart(id)} />
         <div><h3>Total : {item.price * quantity}</h3></div>
       </div>
     </div>
