@@ -41,23 +41,7 @@
       color: red;
       margin-top: 2rem;
     }
-    &__a2cbtn {
-      border: none;
-      border-top: 1px solid rgba(100, 98, 98, 0.494);
-      background: transparent;
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: bold;
-      color: $primary-hover;
-      width: 100%;
-      padding-top: 1rem;
-      margin-top: 1rem;
-      cursor: pointer;
 
-      &:hover {
-        color: $primary-hover;
-      }
-    }
     button {
       border: 1px solid rgb(208, 208, 208);
       background: rgba(216, 18, 18, 0.758);
@@ -84,6 +68,14 @@
         p {
           font-size: small;
         }
+        button:disabled,
+        button[disabled] {
+          border: 1px solid #999999;
+          background-color: #cccccc;
+          color: #666666;
+          cursor: not-allowed;
+          border-radius: $borderRadius;
+        }
       }
       &__quatityBTN button {
         border: 1px solid rgb(208, 208, 208);
@@ -91,7 +83,6 @@
         font-family: inherit;
         font-size: 1rem;
         font-weight: bold;
-
         color: inherit;
         cursor: pointer;
         padding: 2px 8px;

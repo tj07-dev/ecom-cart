@@ -1,5 +1,5 @@
 import classes from "./Header.module.scss";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const Header = () => {
@@ -16,16 +16,14 @@ const Header = () => {
               <Link to="/">Store</Link>
             </li>
           </ul>
-          {cartQuantity > 0 && (
-            <Link className={classes.header__content__nav__Link} to="/viweCart">
-              <button className={classes.header__content__nav__Link__header} >
-                Viwe Cart
-                <div className={classes.header__content__nav__cartQuantity}>
-                  {cartQuantity}
-                </div>
-              </button>
-            </Link>
-          )}
+          <Link className={classes.header__content__nav__Link} to="/viweCart">
+            <button className={classes.header__content__nav__Link__header} >
+              Viwe Cart
+              <div className={classes.header__content__nav__cartQuantity}>
+                {cartQuantity}
+              </div>
+            </button>
+          </Link>
         </nav>
       </div>
     </header>

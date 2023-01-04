@@ -25,7 +25,7 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps): JSX.Element {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([{ id: 1, quantity: 6 }]);
 
   //Function to fecth Product Quantity
   function getItemQuantity(id: number) {

@@ -1,8 +1,8 @@
 import Header from "./components/Header";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
-import { ViweCart } from "./pages/ViweCart";
+import { ViewCart } from "./pages/ViewCart";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/viweCart" element={<ViweCart />} />
+        <Route path="/viweCart" element={<ViewCart />} />
       </Routes>
     </ShoppingCartProvider>
   );

@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import CartItem from "../components/CartItem";
+import Toast from "../components/Toast";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import products from "../data/product.json";
 import "./Page.module.scss";
 
-export function ViweCart() {
+export function ViewCart() {
   const { cartItems, removeFromCart, cartQuantity } = useShoppingCart();
+  const [showAlert, setAlert] = useState(false)
+  const [theme, setTheme] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleCheckout = async () => {
 
@@ -15,16 +19,24 @@ export function ViweCart() {
       headers: {
         'Content-Type': 'application/json'
       }
-    });
-    console.log(JSON.stringify(cartItems))
+    }).then(function (response) {
+      console.log(response)
+      return response.json();
+    })
+      .then(function (myJson) {
+        setMessage(myJson.message)
+        setTheme(myJson.theme)
+        setAlert(true)
+      });
   }
   return (
     <>
+      <Toast open={showAlert} setOpen={setAlert} theme={`${theme}`} children={message} />
       {cartQuantity === 0 ? (
         <h1 className="cart-heading">No item in the Cart</h1>
       ) : (<div className="cart-heading">
         <h1 className="cart-heading-h1">Items in the Cart</h1>
-        <Button className="cart-heading-checkout" children="Check Out" myFunction={handleCheckout} />
+        <Button className="cart-checkout" children="Check Out" myFunction={handleCheckout} />
       </div>
       )}
       {cartItems.map((item) => (
