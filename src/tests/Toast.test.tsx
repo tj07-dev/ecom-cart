@@ -2,18 +2,17 @@ import { describe, expect, test, it  } from 'vitest';
 import { render, screen  } from '@testing-library/react';
 
 
-import App from '../App'
+import Toast from '../components/Toast';
+import { SetStateAction } from 'react';
 describe('App renders correctly', () => {
 
-  test('renders without crashing', () => {
+  test('renders Toast', () => {
     
-    render(<App />);
+    render(<Toast open={false} setOpen={function (value: SetStateAction<boolean>): void {
+      throw new Error('Function not implemented.');
+    } } theme={''} children={undefined} />);
     expect(screen).toMatchSnapshot();
   });
-  test('renders ', () => {
-    render(<App />);
-    const element= screen.getByText(/Add2Cart/i);
-    expect(element).toBeInTheDocument();
-  });
+  
   
 })

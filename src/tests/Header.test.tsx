@@ -1,10 +1,14 @@
 import { describe, expect, test, it  } from 'vitest';
 import { render, screen  } from '@testing-library/react';
+import Header from '../components/Header';
+import { MemoryRouter } from 'react-router-dom';
 
-import App from '../App'
-describe('App renders correctly', () => {
+
+describe('Header renders correctly', () => {
   test('renders without crashing', () => {
-    render(<App />);
+    render(<MemoryRouter initialEntries={["/"]}>
+    <Header />
+  </MemoryRouter>);
     expect(screen).toMatchSnapshot();
   });
   
