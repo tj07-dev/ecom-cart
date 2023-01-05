@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,qFAAI",
+    "sources": [
+        "Page.module.scss",
+        "../styles/variables.scss"
+    ],
+    "names": [],
+    "file": "Page.module.css"
+}

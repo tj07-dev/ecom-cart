@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  color: #1d1d1d;
+  font-family: "Poppins", sans-serif;
+  background: #f4f4ff;
+  background-size: 400% 400%;
+  position: relative;
+  -webkit-animation: animate 7.5s ease-in-out infinite;
+          animation: animate 7.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+.product-list {
+  margin: 2rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 2.5rem;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cart-heading {
+  margin: 30px;
+  color: #030303;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  .product-list {
+    -ms-grid-columns: (minmax(22rem, 16rem))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 16rem));
+  }
+}
+/*# sourceMappingURL=index.css.map */

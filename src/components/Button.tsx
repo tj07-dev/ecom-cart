@@ -8,7 +8,7 @@ type ButtonProps = {
     * This is predefined class selectors for styling
     */
 
-    className: 'add2cart' | 'decreaseQ' | 'increaseQ' | 'remove' | 'cart-checkout'
+    className: 'add2cart' | 'decreaseQ' | 'increaseQ' | 'remove' | 'cart-checkout',
 
     /**
    * Button contents

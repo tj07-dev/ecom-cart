@@ -7,11 +7,13 @@ import { ViewCart } from "./pages/ViewCart";
 function App() {
   return (
     <ShoppingCartProvider>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/viweCart" element={<ViewCart />} />
-      </Routes>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/viweCart" element={<ViewCart />} />
+        </Routes>
+      </BrowserRouter>
     </ShoppingCartProvider>
   );
 }

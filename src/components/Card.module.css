@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+.card {
+  -webkit-box-shadow: 0 0 10px 5px gray;
+          box-shadow: 0 0 10px 5px gray;
+  border-radius: 0.2rem;
+  background-color: #f4f4ff;
+  overflow: hidden;
+  max-width: 28rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2px;
+}
+
+.card__img {
+  width: 14rem;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card__body {
+  margin: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.card__body__title {
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__body__description {
+  line-height: 1.2rem;
+  text-align: justify;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  max-height: 7rem;
+  overflow: hidden;
+}
+
+.card__body__price {
+  font-style: 1.4rem;
+  margin-top: 0.6rem;
+}
+
+.card__body__price::after {
+  content: "INR";
+  font-style: 1rem;
+  position: relative;
+  top: -0.3rem;
+  font-size: 0.7rem;
+  padding-right: 0.1rem;
+}
+
+.card__body__stock {
+  color: red;
+  margin-top: 2rem;
+}
+
+.card__body__a2cbtn {
+  border: none;
+  border-top: 1px solid rgba(100, 98, 98, 0.494);
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4949e5;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.card__body__a2cbtn:hover {
+  color: #4949e5;
+}
+
+.card__body__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card__body__quantity button {
+  border: 1px solid #d0d0d0;
+  background: rgba(216, 18, 18, 0.758);
+  font-family: inherit;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.card__body__quantity button:disabled,
+.card__body__quantity button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.card__body__quantity__quatityBTN {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2rem;
+  margin: 8px;
+}
+
+.card__body__quantity__quatityBTN p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: unset;
+  -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+          flex-direction: unset;
+}
+
+.card__body__quantity__quatityBTN button {
+  border: 1px solid #d0d0d0;
+  background: rgba(203, 202, 202, 0);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .product-list {
+    -ms-grid-columns: (minmax(22rem, 16rem))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 16rem));
+  }
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    min-width: 22rem;
+  }
+  .card__img {
+    width: 100%;
+    height: 18rem;
+  }
+}
+/*# sourceMappingURL=Card.module.css.map */

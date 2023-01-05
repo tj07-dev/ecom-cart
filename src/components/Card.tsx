@@ -102,7 +102,7 @@ const Card = ({ id, img, name, price, description, stock }: ProductItemProps) =>
   };
 
   return (
-    <div className={classes.card}>
+    <div data-testId='div' className={classes.card}>
       <Toast open={showAlert} setOpen={setAlert} theme={`${theme}`} children={message} />
       <img src={img} className={classes.card__img} alt={name} />
       <div className={classes.card__body}>
@@ -112,7 +112,7 @@ const Card = ({ id, img, name, price, description, stock }: ProductItemProps) =>
         {quantity === 0 ? (
           <>
             {stock == 0 ? (
-              <Button className="add2cart" children="Add to cart" myFunction={() => handleOutOfStock(id)} />
+              <Button  className="add2cart" children="Add to cart" myFunction={() => handleOutOfStock(id)} />
             ) : (
               <Button className="add2cart" children="Add to cart" myFunction={() => handleAddtoCart(id)} />
             )}
