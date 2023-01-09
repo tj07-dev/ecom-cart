@@ -1,15 +1,32 @@
-Add to cart {
-    Product List,
-    viwe Cart,
+# ECom - Add2Cart
 
-}
 
-Need to implement {
-    Storybook
-    Prettier (done)
-    React (done)
-    Typescript (done)
-    SASS (done)
-    Testing (Use Cases)
-    Accesiblity
-}
+![screen-gif](./Add2Cart.gif)
+
+This is Frontend of Ecom Prototype.
+
+# IDE :
+
+➢ VS Code
+
+# Build tool : 
+
+➢ Vite
+
+# Testing Lib. : 
+
+➢ Vitest
+
+# Technology/Extention :
+
+➢ React
+
+➢ TypeScript
+
+➢ SASS
+
+➢ StoryBook
+
+➢ ES-Lint
+
+➢ Prettier
