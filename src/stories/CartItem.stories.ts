@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/CartItem/CartItem";
 
 const meta = {
   title: "Components/Cart Item",

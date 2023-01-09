@@ -1,6 +1,6 @@
 import classes from "./Header.module.scss";
 import { Link } from "react-router-dom";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 const Header = () => {
   const { cartQuantity } = useShoppingCart();

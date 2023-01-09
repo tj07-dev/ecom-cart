@@ -16,6 +16,8 @@ type ButtonProps = {
 
     children?: ReactNode
 
+    type?: string
+
     /**
     * This props helps in passing fuction through component
     */
@@ -27,7 +29,7 @@ type ButtonProps = {
  */
 const Button = (props: ButtonProps) => {
     return (
-        <button className={style[props.className]} onClick={props.myFunction} >{props.children}</button>
+        <button className={style[props.className]} onClick={props.myFunction} data-testid="ok-button">{props.children}</button>
     )
 }
 export default Button

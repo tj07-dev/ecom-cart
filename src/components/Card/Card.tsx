@@ -1,8 +1,8 @@
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 import classes from "./Card.module.scss";
-import productlist from "../data/product.json";
-import Button from "./Button";
-import Toast from "./Toast";
+import productlist from "../../data/product.json";
+import Button from "../Button/Button";
+import Toast from "../Toast/Toast";
 import { useState } from "react";
 
 type ProductItemProps = {
@@ -35,6 +35,7 @@ const Card = ({ id, img, name, price, description, stock }: ProductItemProps) =>
   const [showAlert, setAlert] = useState(false)
   const [theme, setTheme] = useState('');
   const [message, setMessage] = useState('');
+  const [outofStock, seToutofStock] = useState(false)
   const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } =
     useShoppingCart();
   const quantity = getItemQuantity(id);
@@ -74,6 +75,7 @@ const Card = ({ id, img, name, price, description, stock }: ProductItemProps) =>
         setMessage(myJson.message)
         setTheme(myJson.theme)
         setAlert(true)
+        seToutofStock(true)
       });
     console.log(data)
   };
@@ -111,8 +113,10 @@ const Card = ({ id, img, name, price, description, stock }: ProductItemProps) =>
         <h3 className={classes.card__body__price}>{price}</h3>
         {quantity === 0 ? (
           <>
-            {stock == 0 ? (
-              <Button  className="add2cart" children="Add to cart" myFunction={() => handleOutOfStock(id)} />
+            {stock == 0 ? (<>
+              {!outofStock ?
+                <Button className="add2cart" children="Add to cart" myFunction={() => handleOutOfStock(id)} /> :
+                <h2 className={classes.card__body__outofstock}>Out of Stock</h2>}</>
             ) : (
               <Button className="add2cart" children="Add to cart" myFunction={() => handleAddtoCart(id)} />
             )}

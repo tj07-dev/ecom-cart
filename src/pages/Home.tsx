@@ -1,5 +1,5 @@
 import products from "../data/product.json";
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
 import '../styles/index.scss'
 
 export function Home() {

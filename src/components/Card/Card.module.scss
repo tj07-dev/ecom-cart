@@ -1,18 +1,22 @@
-@import "./../styles/variables.scss";
+@import "../../styles/variables.scss";
 
 .card {
-  border-radius: $radius;
   box-shadow: 0 0 10px 5px gray;
-  min-width: 28rem;
-  display: flex;
-  margin: 2rem;
-  padding: 1rem;
+  border-radius: $radius;
   background-color: $bg;
+  overflow: hidden;
+  // width: 22rem;
+  max-width: 28rem;
+  display: flex;
+  margin: 2px;
 
   &__img {
-    width: 7rem;
-    height: 8rem;
+    width: 14rem;
+    // height: 18rem;
+    aspect-ratio: 3/2;
     object-fit: cover;
+    // object-fit: contain;
+    // mix-blend-mode: color-burn;
   }
   &__body {
     margin: 1rem;
@@ -24,6 +28,15 @@
     }
     &__description {
       line-height: 1.2rem;
+      text-align: justify;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      max-height: 7rem;
+      overflow: hidden;
+    }
+    &__outofstock {
+      color: rgba(255, 0, 0, 0.671);
+      margin-top: 25px;
     }
     &__price {
       font-style: 1.4rem;
@@ -41,17 +54,22 @@
       color: red;
       margin-top: 2rem;
     }
-
-    button {
-      border: 1px solid rgb(208, 208, 208);
-      background: rgba(216, 18, 18, 0.758);
+    &__a2cbtn {
+      border: none;
+      border-top: 1px solid rgba(100, 98, 98, 0.494);
+      background: transparent;
       font-family: inherit;
-      width: 100px;
       font-size: 1rem;
       font-weight: bold;
-      color: inherit;
+      color: $primary-hover;
+      width: 100%;
+      padding-top: 1rem;
+      margin-top: 1rem;
       cursor: pointer;
-      padding: 2px 8px;
+
+      &:hover {
+        color: $primary-hover;
+      }
     }
     &__quantity {
       display: flex;
@@ -59,24 +77,36 @@
       flex-direction: column;
       gap: 0.5rem;
 
+      button {
+        border: 1px solid rgb(208, 208, 208);
+        background: rgba(216, 18, 18, 0.758);
+        font-family: inherit;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+        color: inherit;
+        cursor: pointer;
+        padding: 2px 8px;
+      }
+      button:disabled,
+      button[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+      }
+
       &__quatityBTN {
         display: flex;
         flex-direction: row;
-        gap: 0.7rem;
-        margin: 8px 0;
-
-        p {
-          font-size: small;
-        }
-        button:disabled,
-        button[disabled] {
-          border: 1px solid #999999;
-          background-color: #cccccc;
-          color: #666666;
-          cursor: not-allowed;
-          border-radius: $borderRadius;
-        }
+        gap: 2rem;
+        margin: 8px;
       }
+      &__quatityBTN p {
+        display: flex;
+        flex-direction: unset;
+      }
+
       &__quatityBTN button {
         border: 1px solid rgb(208, 208, 208);
         background: rgba(203, 202, 202, 0);
@@ -90,7 +120,7 @@
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .product-list {
     grid-template-columns: repeat(auto-fit, minmax(22rem, 16rem));
   }

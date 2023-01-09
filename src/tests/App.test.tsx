@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { describe, expect, test, it  } from 'vitest';
-import { render, screen  } from '@testing-library/react';
+import { describe, expect, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
 
 import App from '../App'
 describe('App renders correctly', () => {
@@ -12,8 +10,7 @@ describe('App renders correctly', () => {
   });
   test('renders ', () => {
     render(<App />);
-    const element= screen.getByText(/Add2Cart/i);
+    const element = screen.getByText(/Add2Cart/i);
     expect(element).toBeInTheDocument();
   });
-  
 })

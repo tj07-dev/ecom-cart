@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../components/Button";
-import CartItem from "../components/CartItem";
-import Toast from "../components/Toast";
+import Button from "../components/Button/Button";
+import CartItem from "../components/CartItem/CartItem";
+import Toast from "../components/Toast/Toast";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import "./Page.module.scss";
 

@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+@import "../../styles/variables.scss";
+
 .add2cart {
   border: none;
   border-top: 1px solid rgba(100, 98, 98, 0.494);
@@ -6,60 +7,60 @@
   font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
-  color: #4949e5;
+  color: $primary-hover;
   padding-top: 1rem;
   margin-top: 1rem;
   cursor: pointer;
-}
 
-.add2cart:hover {
-  color: #4949e5;
+  &:hover {
+    color: $primary-hover;
+  }
 }
-
-.decreaseQ, .increaseQ {
-  border: 1px solid #d0d0d0;
+.decreaseQ {
+  border: 1px solid rgb(208, 208, 208);
   background: rgba(203, 202, 202, 0);
   font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 12px;
+  border-radius: $borderRadius;
   color: inherit;
   cursor: pointer;
   padding: 2px 8px;
 }
 
-.increaseQ button:disabled,
-.increaseQ button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
+.increaseQ {
+  @extend .decreaseQ;
+  button:disabled,
+  button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
 }
 
 .remove {
-  border: 1px none #d0d0d0;
+  border: 1px none rgb(208, 208, 208);
   background: rgba(216, 18, 18, 0.758);
   font-family: inherit;
+  // width: 100%;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: $borderRadius;
   font-weight: bold;
   color: black;
   cursor: pointer;
   padding: 2px 8px;
   padding: 0.75rem 1.25rem;
 }
-
 .cart-checkout {
   padding: 0.75rem 1.25rem;
-  border-radius: 12px;
+  border-radius: $borderRadius;
   font-size: 1rem;
   font-family: inherit;
-  -webkit-box-shadow: 0 2px 6px gray;
-          box-shadow: 0 2px 6px gray;
-  color: #1d1d1d;
+  box-shadow: 0 2px 6px gray;
+  // border-color: $primary;
+  color: $dark;
   border: 1px solid transparent;
-  -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
   cursor: pointer;
 }
-/*# sourceMappingURL=Button.module.css.map */

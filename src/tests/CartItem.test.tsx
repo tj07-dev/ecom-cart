@@ -1,6 +1,6 @@
-import { describe, expect, test, it  } from 'vitest';
-import { render, screen  } from '@testing-library/react';
-import CartItem from '../components/CartItem';
+import { describe, expect, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import CartItem from '../components/CartItem/CartItem';
 
 
 describe('CartItem renders correctly', () => {
@@ -9,5 +9,5 @@ describe('CartItem renders correctly', () => {
     render(<CartItem id={1} quantity={1} />);
     expect(screen).toMatchSnapshot();
   });
-  
+
 })

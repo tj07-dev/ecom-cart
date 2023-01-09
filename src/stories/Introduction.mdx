@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Example/Introduction" />
+<Meta title="Introduction" />
 
 <style>
   {`
@@ -106,97 +106,67 @@ import { Meta } from "@storybook/blocks";
   `}
 </style>
 
-# Welcome to Storybook
+# Welcome to Add2Cart Prototype
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+In this project user can `add`, `increase`, `decrease` or `remove` products from Store list.
+Status of users input will be shown as `toast message on screen` which is comes from backend after certain response.
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+For the project we have used [**Vite**](https://vitejs.dev/) as build tool.
 
-<div className="subheading">Configure</div>
+<div className="subheading">Frontend</div>
 
 <div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
+  <a className="link-item">
     <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
+      <strong>Build Tool</strong>
+      Vite, TypeScript.
     </span>
   </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
+  <a className="link-item">
     <span>
       <strong>Styling</strong>
-      How to load and configure CSS libraries
+      SCSS
     </span>
   </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
+  <a className="link-item">
     <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
+      <strong>Data Store</strong>
+      JSON
+    </span>
+  </a>
+  <a className="link-item">
+    <span>
+      <strong>Testing</strong>
+      Jest Testing Library
+    </span>
+  </a>
+  <a className="link-item">
+    <span>
+      <strong>Documentation</strong>
+      Storybook
     </span>
   </a>
 </div>
 
-<div className="subheading">Learn</div>
+<div className="subheading">Backend</div>
 
 <div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
+  <a className="link-item">
     <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
+      <strong>Build Tool</strong>
+      Node JS + TypeScript
     </span>
   </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
+  <a className="link-item">
     <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
+      <strong>Testing</strong>
+      Mocha, Supertest
     </span>
   </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
+  <a className="link-item">
     <span>
-      <strong>GitHub project</strong>
-      View the source and add issues
+      <strong>Other Library</strong>
+      Nodemon Cors
     </span>
   </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
-    </span>
-  </a>
-</div>
-
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in <code>stories/Introduction.stories.mdx</code>
 </div>

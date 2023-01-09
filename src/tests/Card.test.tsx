@@ -1,10 +1,10 @@
-import { describe, expect, test, it } from "vitest";
+import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
 import { ShoppingCartProvider } from "../context/ShoppingCartContext";
 
 describe("Card renders correctly", () => {
-  test("renders without crashing", () => {
+  test("Card renders without crashing", () => {
     const data = {
       id: 1,
       name: "MSI GF63 ",

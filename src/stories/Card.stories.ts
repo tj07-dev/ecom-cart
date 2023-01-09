@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
 
 const meta = {
   title: "Components/Product Card",
   component: Card,
-  argTypes: {},
   tags: ["autodocs"],
   parameters: {
     quantity: 8,

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Toast from "../components/Toast";
+import Toast from "../components/Toast/Toast";
 
 export default {
   title: "Components/Toast",

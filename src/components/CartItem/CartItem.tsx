@@ -1,6 +1,6 @@
-import { useShoppingCart } from "../context/ShoppingCartContext";
-import products from "../data/product.json";
-import Button from "./Button";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
+import products from "../../data/product.json";
+import Button from "../Button/Button";
 import classes from "./CartItem.module.scss";
 
 type ShoppingCartProps = {
